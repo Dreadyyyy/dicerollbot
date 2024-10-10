@@ -3,11 +3,13 @@ from random import randint
 
 def parse_dice(s: str) -> str:
     res = ""
+    tokens = [list(d.split("d")) for d in s.split(" ")]
+    tokens = [l for l in tokens if len(l) == 2]
 
     try:
-        tokens = [[int(v) for v in d.split("d")] for d in s.split(" ")]
-    except ValueError as _:
-        return "Wrong format!"
+        tokens = [(int(a), int(t)) for a, t in tokens]
+    except ValueError:
+        return "Wront format!"
 
     for a, t in tokens:
         res += f"d{t}:"

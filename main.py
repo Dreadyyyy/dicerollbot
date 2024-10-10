@@ -1,12 +1,12 @@
 import asyncio
 import logging as log
-from telegram import start
+from telegram import start_bot
 
 log.basicConfig(level=log.INFO)
 
 
 async def main() -> None:
-    await start()
+    await start_bot()
 
 
 if __name__ == "__main__":
