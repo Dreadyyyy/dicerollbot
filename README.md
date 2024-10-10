@@ -26,7 +26,7 @@ pip install -r requirements.txt
 
 Create .env file
 ```
-echo BOT_TOKEN="your_api_token">.env
+echo BOT_TOKEN=your_api_token>.env
 ```
 
 Run bot
