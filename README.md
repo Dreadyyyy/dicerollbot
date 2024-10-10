@@ -2,11 +2,11 @@ Installation guide
 
 Download repo
 ```
-git clone "link"
+git clone https://github.com/Dreadyyyy/dicerollbot
 ```
 Change directory
 ```
-cd "name"
+cd dicerollbot
 ```
 
 Create virtual environment
