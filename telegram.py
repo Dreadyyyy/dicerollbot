@@ -29,4 +29,7 @@ async def roll(message: Message) -> None:
     if message.text is None:
         await message.reply("Wrong format!")
         return
-    await message.reply(parse_dice(message.text))
+
+    text = message.text.replace("/roll", "")
+    text = text.strip(" ")
+    await message.reply(parse_dice(text))

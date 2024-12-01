@@ -2,18 +2,20 @@ from random import randint
 
 
 def parse_dice(s: str) -> str:
-    res = ""
-    tokens = [list(d.split("d")) for d in s.split(" ")]
-    tokens = [l for l in tokens if len(l) == 2]
-
+    tokens = []
     try:
-        tokens = [(int(a), int(t)) for a, t in tokens]
+        for group in s.split(" "):
+            amount, rest = group.split("d")
+            rest = rest.replace("-", "+-")
+            edges, bonus = n if len(n := rest.split("+")) == 2 else (rest, "0")
+            tokens += [map(int, (amount, edges, bonus))]
     except ValueError:
-        return "Wront format!"
+        return "Wrong format!"
 
-    for a, t in tokens:
-        res += f"d{t}:"
+    res = ""
+    for a, e, b in tokens:
+        res += f"d{e}:"
         for _ in range(a):
-            res += f" {randint(1, t)}"
+            res += f" {randint(1, e) + b}"
         res += "\n"
     return res
