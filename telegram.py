@@ -18,8 +18,8 @@ async def start(message: Message) -> None:
     await message.answer(
         """
 Commands:
-    /roll {Amount of dice}d{Edges on a die} ...
-    Example: /roll 2d6 3d8
+/roll {Amount of dice}d{Edges on a die}[+|-number] ...
+Example: /roll 2d6 3d8
         """
     )
 
