@@ -1,36 +1,36 @@
-Installation guide
+## **Installation guide**
 
-Download repo
-```
+1. Download repo
+```shell
 git clone https://github.com/Dreadyyyy/dicerollbot
 ```
-Change directory
-```
+2. Change directory
+```shell
 cd dicerollbot
 ```
 
-Create virtual environment
-```
+3. Create virtual environment
+```shell
 python -m venv .venv
 ```
 
-Activate virtual environment
-```
+4. Activate virtual environment
+```shell
 source .venv/bin/activate
 ```
 
-Install dependencies
-```
+5. Install dependencies
+```shell
 pip install -r requirements.txt
 ```
 
-Create .env file
-```
+6. Create .env file with credentials
+```shell
 echo BOT_TOKEN=your_api_token>.env
 ```
 
-Run bot
-```
+7. Run bot
+```shell
 python main.py
 ```
 
