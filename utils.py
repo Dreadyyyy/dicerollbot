@@ -16,6 +16,6 @@ def parse_dice(s: str) -> str:
     for a, e, b in tokens:
         res += f"d{e}:"
         for _ in range(a):
-            res += f" {randint(1, e) + b}"
+            res += f" {max(randint(1, e) + b, 0) % e + 1}"
         res += "\n"
     return res
